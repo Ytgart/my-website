@@ -1,0 +1,306 @@
+@font-face {
+    font-family: "KamenicaC";
+    src: url("fonts/KamenicaC.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bebas";
+    src: url("fonts/Bebas.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Sans";
+    src: url("fonts/SourceSansPro-Regular.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body
+{
+    background-color: #121212;
+    padding-top: 130px;
+}
+
+h1
+{
+    font-family: "Bebas";
+    margin-left: 30px;
+    font-size: 45px;
+    color: #d3d3d3;
+    text-shadow: 0 0 10px #000000;
+}
+
+h2
+{
+    font-family: "Bebas";
+    font-size: 35px;
+    margin-left: 30px;
+    color: #ffdb4d;
+}
+
+p
+{
+    font-family: "Sans";
+    font-size: 24px;
+    margin-left: 30px;
+    color: white;
+}
+
+img
+{
+    border-radius: 20px;
+}
+
+/*menu class*/
+.menu
+{
+    font-family: "Bebas";
+    font-size: 25px;
+    width: 80%;
+    display: table;
+    margin-left: 150px;
+}
+
+.menu li
+{
+    display: table-cell;
+    width: 500px;
+}
+
+.menu ul
+{
+    display: table-row;
+}
+
+.menu li a
+{
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 10px #000000;
+}
+
+.menu a:hover
+{
+    color: rgb(182, 182, 182);
+}
+
+/*content class*/
+.content ul
+{
+    list-style-type: none;
+    text-align: center;
+}
+
+.content a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.content a:hover
+{
+    color:rgb(182, 182, 182);
+}
+
+.content h3
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+/*disc class*/
+.disc table
+{
+    background-color: white;
+    border-collapse: collapse;
+    margin-left: 30px;
+}
+
+.disc th,td
+{
+    border: 1px solid grey;
+    padding: 3px;
+}
+
+/*photoalbum class*/
+.photoalbum table
+{
+    border-collapse: collapse;
+}
+
+.photoalbum td
+{
+    border: 0px;
+    padding-right: 15px;
+}
+
+.photoalbum h3
+{
+    text-align: center;
+    font-family: "Bebas";
+    font-size: 30px;
+    margin-top: 3px;
+    color: white;
+}
+
+.photoalbum img:hover
+{
+    filter: brightness(0.7);
+}
+
+.photoalbum img
+{
+    width: 460px; 
+    height: 270px;
+}
+
+/*topline class*/
+.topline td
+{
+    border: 0px;
+    white-space: nowrap;
+}
+
+.topline 
+{
+    background-color: #181818;
+    position: fixed;
+    top: 0;
+    left: -10px;
+}
+
+/*cv class*/
+.cv
+{
+    background-color: #181818;
+    border-radius: 30px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.cv img
+{
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+.cv h2
+{
+    margin: 0;
+}
+
+.cv p
+{
+    margin: 0;  
+}
+
+.cv td
+{
+    border: 0px;
+}
+
+/*textbox class*/
+.textbox 
+{
+    background-color: #181818;
+    border-radius: 30px;
+    width: max-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1px;
+}
+
+.textbox h2
+{
+    text-align: center;
+}
+
+.textbox p
+{
+    width: 800px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.textbox img
+{
+    width: 800px;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    display: block;
+
+}
+
+.textbox table
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/*inputform class*/
+.inputform
+{
+    background-color: #181818;
+    border-radius: 30px;
+    width: 350px;
+    height: 300px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputform label
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputform form
+{
+    padding: 40px;
+}
+
+/*testform class*/
+.testform
+{
+    background-color: #181818;
+    border-radius: 30px;
+    width: 350px;
+    height: 560px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testform label
+{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.testform form
+{
+    padding: 40px;
+}
+
+.testform p
+{
+    font-size: 20px;
+    margin-left: 0px;
+    margin-top: 10px;
+}
+
+

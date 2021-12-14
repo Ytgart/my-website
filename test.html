@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+
+<head>
+    <title>Тест по дисциплине</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <div class="topline">
+        <table>
+            <tr>
+                <td>
+                    <h1>Персональный сайт Ивана Павлова</h1>
+                </td>
+                <td>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="main.html">Главная</a></li>
+                            <li><a href="aboutme.html">Обо мне</a></li>
+                            <li><a href="activities.html">Мои интересы</a></li>
+                            <li><a href="study.html">Учеба</a></li>
+                            <li><a href="photo.html">Фотоальбом</a></li>
+                            <li><a href="contact.html">Контакт</a></li>
+                            <li><a href="test.html">Тест</a></li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="testform">
+        <form method="POST" action="mailto:solovey-vanyaaa@yandex.ru">
+            <input name="name" placeholder="ФИО" size="40">
+            <br>
+            <br>
+            <select name="group">
+                <optgroup label="1 курс">
+                    <option>ИС/б-21-1-о</option>
+                </optgroup>
+                <optgroup label="2 курс">
+                    <option>ИС/б-20-1-о</option>
+                </optgroup>
+                <optgroup label="3 курс">
+                    <option>ИС/б-19-1-о</option>
+                </optgroup>
+                <optgroup label="4 курс">
+                    <option>ИС/б-18-1-о</option>
+                </optgroup>
+            </select>
+            <br>
+            <br>
+            <p>Дайте определение биоценоза.</p>
+            <select name="1question">
+                <option>Сообщество видов.</option>
+                <option>Сообщество растений и животных.</option>
+            </select>
+            <br>
+            <br>
+            <p>Что такое биотические факторы?</p>
+            <input type="text" name="2question">
+            <br>
+            <br>
+            <p>Что подразумевают симбиотические отношения?</p>
+            <input type="radio" id="1" name="3question" value="answer1">
+            <label>Взаимную выгоду.</label>
+            <input type="radio" id="2" name="3question" value="answer2">
+            <label>Угнетение.</label>
+            <br>
+            <br>
+            <input type="reset" value="Очистить поля">
+            <br>
+            <br>
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+
+
+</body>
+
+</html>

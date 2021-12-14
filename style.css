@@ -160,14 +160,14 @@ img
     height: 270px;
 }
 
-/*topline class*/
-.topline td
+/*navigation*/
+nav td
 {
     border: 0px;
     white-space: nowrap;
 }
 
-.topline 
+nav 
 {
     background-color: #181818;
     position: fixed;
@@ -302,5 +302,3 @@ img
     margin-left: 0px;
     margin-top: 10px;
 }
-
-

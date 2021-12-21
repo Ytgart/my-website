@@ -13,7 +13,7 @@ function validate() {
     let radio2 = document.getElementById("2");
     let questionField = document.getElementById("question2");
 
-    if (!(field1.value.split(' ').length == 3)) {
+    if (field1.value.split(' ').length != 3) {
         alert("Пожалуйста введите правильные данные");
         field1.focus();
         return false;
@@ -26,8 +26,8 @@ function validate() {
         }
     }
     if (phone != null) {
-        if (!(phone.value.startsWith("+7") || phone.value.startsWith("+3"))
-            || phone.value.includes(' ') || !(phone.value.length >= 9 && phone.value.length <= 11) || !/^\d+$/.test(phone.value.slice(1))) {
+        if (!(phone.value.startsWith("+7") || phone.value.startsWith("+3")) ||
+            phone.value.includes(' ') || !(phone.value.length >= 9 && phone.value.length <= 11) || !/^\d+$/.test(phone.value.slice(1))) {
             phone.focus();
             alert("Пожалуйста введите правильные данные");
             return false;
@@ -39,8 +39,8 @@ function validate() {
     }
 
     if (questionField != null) {
-        let words = questionField.value.split(' ')
-        var isWordDigit = false
+        let words = questionField.value.split(' ');
+        var isWordDigit = false;
 
         words.forEach(element => {
             if (/^\d+$/.test(element)) {

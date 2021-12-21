@@ -11,15 +11,17 @@ let currentElement = 0;
 for (let i = 0; i < Math.ceil(titles.length / 4); i++) {
     let row = table.insertRow();
 
-    for (let j = currentElement; j < currentElement + 4; j++) {
-        if (currentElement < titles.length) {
-            let cell = row.insertCell();
-            let image = document.createElement('img');
-            image.setAttribute('src', `images/${fotosPaths[j]}.jpg`);
-            currentElement++;
-            cell.appendChild(image);
-        }
-        else {
+    for (let j = 0; j < 4; j++) {
+        let cell = row.insertCell();
+
+        let image = document.createElement('img');
+        image.setAttribute('src', `images/${fotosPaths[currentElement]}.jpg`);
+        image.setAttribute('title', titles[currentElement]);
+
+        cell.appendChild(image);
+
+        currentElement++;
+        if (currentElement >= titles.length) {
             break;
         }
     }

@@ -5,6 +5,7 @@
     <title>Тест по дисциплине</title>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
+    <script src="scripts/Validator.js"></script>
 </head>
 
 <body>
@@ -32,8 +33,8 @@
     </nav>
 
     <div class="testform">
-        <form method="POST" action="mailto:solovey-vanyaaa@yandex.ru">
-            <input name="name" placeholder="ФИО" size="40">
+        <form method="POST" action="mailto:solovey-vanyaaa@yandex.ru" id="form1">
+            <input name="name" placeholder="ФИО" size="40" id="fio">
             <br>
             <br>
             <select name="group">
@@ -60,7 +61,7 @@
             <br>
             <br>
             <p>Что такое биотические факторы?</p>
-            <input type="text" name="2question">
+            <input type="text" name="2question" id="question2">
             <br>
             <br>
             <p>Что подразумевают симбиотические отношения?</p>
@@ -76,8 +77,6 @@
             <input type="submit" value="Отправить">
         </form>
     </div>
-
-
 </body>
 
 </html>

@@ -18,7 +18,11 @@ for (let i = 0; i < Math.ceil(titles.length / 4); i++) {
         image.setAttribute('src', `images/${fotosPaths[currentElement]}.jpg`);
         image.setAttribute('title', titles[currentElement]);
 
+        let name = document.createElement('h3');
+        name.innerHTML = titles[currentElement];
+
         cell.appendChild(image);
+        cell.appendChild(name);
 
         currentElement++;
         if (currentElement >= titles.length) {

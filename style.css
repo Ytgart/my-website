@@ -28,7 +28,6 @@ body
 h1
 {
     font-family: "Bebas";
-    margin-left: 30px;
     font-size: 45px;
     color: #d3d3d3;
     text-shadow: 0 0 10px #000000;
@@ -37,57 +36,20 @@ h1
 h2
 {
     font-family: "Bebas";
-    font-size: 35px;
-    margin-left: 30px;
-    color: #ffdb4d;
+    font-size: 30px;
+    color: #ffffff;
 }
 
 p
 {
     font-family: "Sans";
     font-size: 24px;
-    margin-left: 30px;
     color: white;
 }
 
 img
 {
     border-radius: 20px;
-}
-
-/*menu class*/
-.menu
-{
-    font-family: "Bebas";
-    font-size: 25px;
-    width: 80%;
-    display: table;
-    margin-left: 150px;
-}
-
-.menu li
-{
-    display: table-cell;
-    width: 500px;
-}
-
-.menu ul
-{
-    display: table-row;
-}
-
-.menu li a
-{
-    display: block;
-    text-decoration: none;
-    color: #ffffff;
-    text-align: center;
-    text-shadow: 0 0 10px #000000;
-}
-
-.menu a:hover
-{
-    color: rgb(182, 182, 182);
 }
 
 /*content class*/
@@ -160,19 +122,49 @@ img
     height: 270px;
 }
 
-/*navigation*/
-nav td
-{
-    border: 0px;
-    white-space: nowrap;
-}
-
+/*nav class*/
 nav 
 {
-    background-color: #181818;
+    background: #181818;
     position: fixed;
     top: 0;
-    left: -10px;
+    left: 0;
+    font-family: "Bebas";
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 30px;
+}
+
+nav a
+{
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: 0 0 10px #000000;
+    display: block;
+    background: #3b3b3b;
+    border-radius: 30px;
+    padding: 12px;
+    margin-left: 30px;
+}
+
+nav p
+{
+    margin-left: 20px;
+}
+
+.dropDownContent
+{
+    position: absolute;
+    width: max-content;
+    display: none;
+}
+
+.dropDownContent a
+{
+    margin-top: 10px;
 }
 
 /*cv class*/
@@ -209,12 +201,13 @@ nav
 .textbox 
 {
     background-color: #181818;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
     border-radius: 30px;
-    width: max-content;
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 1px;
+    margin-bottom: 15px;
 }
 
 .textbox h2
@@ -225,8 +218,6 @@ nav
 .textbox p
 {
     width: 800px;
-    padding-bottom: 20px;
-    padding-right: 20px;
     text-align: center;
 }
 
@@ -236,9 +227,6 @@ nav
     height: 450px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
-    display: block;
-
 }
 
 .textbox table
@@ -254,9 +242,7 @@ nav
     background-color: #181818;
     border-radius: 30px;
     width: 350px;
-    height: 320px;
-    text-align: center;
-    display: block;
+    height: max-content;
     margin-left: auto;
     margin-right: auto;
 }
@@ -270,6 +256,7 @@ nav
 .inputform form
 {
     padding: 40px;
+    text-align: center;
 }
 
 /*testform class*/
@@ -301,4 +288,55 @@ nav
     font-size: 20px;
     margin-left: 0px;
     margin-top: 10px;
+}
+
+.calendar 
+{
+    display: none;
+    position: absolute;
+    height: max-content;
+    width: max-content;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.dayNames
+{
+    display: flex;
+    gap: 7px;
+}
+
+.dayNames p
+{
+    color: #000000;
+    font-size: 15px;
+}
+
+.selectMY
+{
+    width: 208px;
+    background: #3b3b3b;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.days
+{
+    width: 220px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 7px;
+    align-content: center;
+}
+
+.days a
+{
+    text-decoration: none;
+    width: 25px;
+    height: 25px;
+    color: whitesmoke;
+    font-size: 19px;
+    background: #3b3b3b;
+    user-select: none;
 }

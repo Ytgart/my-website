@@ -35,15 +35,19 @@
     <div class="inputform">
         <form id="form1" method="POST" action="mailto:solovey-vanyaaa@yandex.ru">
             <input placeholder="ФИО" size="40" name="fio" id="fio">
+            <p style="color:red; font-size: 15px; display: none;", id="fioHint">ФИО должно состоять из трех слов</p>
             <br>
             <br>
             <input placeholder="E-Mail" size="40" name="e-mail" id="email">
+            <p style="color:red; font-size: 15px; display: none;", id="emailHint">E-mail не должен быть пустым</p>
             <br>
             <br>
             <input placeholder="Телефон" size="40" name="phone" id="phone">
+            <p style="color:red; font-size: 15px; display: none;", id="phoneHint">Телефон должен начинаться с +7 либо +3 и быть размером от 9 до 11 символов</p>
             <br>
             <br>
             <input placeholder="Дата" size="40" name="date" id="date">
+            <p style="color:red; font-size: 15px; display: none;", id="dateHint">Дата не должна быть пустой</p>
             <br>
             <br>
             <div class="calendar">
@@ -84,7 +88,7 @@
             <input type="reset" value="Очистить поля">
             <br>
             <br>
-            <input type="submit" value="Отправить">
+            <input type="submit" value="Отправить", id="sendButton">
         </form>
     </div>
 </body>

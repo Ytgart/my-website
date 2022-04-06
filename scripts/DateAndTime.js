@@ -1,7 +1,7 @@
 let dateTimeText = null
 
 window.addEventListener("load", main, true);
-setInterval(drawDateAndTime, 1000);
+setInterval(drawDateAndTime, 1);
 
 function main() {
     dateTimeText = document.getElementById("dateTime");

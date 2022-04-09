@@ -1,93 +1,125 @@
-window.onload = main;
+$(() => {
+    main1();
+});
 
-function main() {
-    let fieldsToValidate = [
-        document.getElementById("fio"),
-        document.getElementById("email"),
-        document.getElementById("phone"),
-        document.getElementById("1"),
-        document.getElementById("2"),
-        document.getElementById("date")
-    ]
+function main1() {
+    $("input")
+        .focusout(() => {
+            validate();
+        });
 
-    fieldsToValidate[0].addEventListener("focusout", () => {
-        validate(fieldsToValidate);
-    });
-    fieldsToValidate[1].addEventListener("focusout", () => {
-        validate(fieldsToValidate);
-    });
-    fieldsToValidate[2].addEventListener("focusout", () => {
-        validate(fieldsToValidate);
-    });
-    fieldsToValidate[3].addEventListener("focusout", () => {
-        validate(fieldsToValidate);
-    });
-    fieldsToValidate[4].addEventListener("focusout", () => {
-        validate(fieldsToValidate);
-    });
-    fieldsToValidate[5].addEventListener("focusout", () => {
-        validate(fieldsToValidate);
-    });
+    $("#sendButton").prop("disabled", true);
 
-    let button = document.getElementById("sendButton");
-    button.disabled = true;
+    showPopOver($("#fio"), "ФИО должно состоять из трех слов");
+    showPopOver($("#email"), "Email не должен быть пустым");
+    showPopOver($("#phone"), "Телефон должен начинаться с +3 или +7 и содержать от 9 до 11 символов");
+    showPopOver($("#date"), "Дата не должна быть пустой. Выберите дату в календаре");
+
+    $("#sendButton")
+        .click(() => {
+            showModalWindow("Вы действительно хотите отправить форму?", () => {
+                $("#form1").submit();
+            });
+        });
 }
 
-function validate(fields) {
+function validate() {
     let isValidateSuccessful = true;
 
-    if (fields[0].value.split(' ').length != 3) {
-        fields[0].style.borderColor = "red";
-        document.getElementById("fioHint").style.display = "block";
-
+    if ($("#fio").val().split(' ').length != 3) {
+        $("#fio").css("borderColor", "red");
         isValidateSuccessful = false;
     } else {
-        fields[0].style.borderColor = "green";
-        document.getElementById("fioHint").style.display = "none";
+        $("#fio").css("borderColor", "green");
     }
 
-    if (fields[1] != null) {
-        if (fields[1].value == "") {
-            fields[1].style.borderColor = "red";
+    if ($("#email") != null) {
+        if ($("#email").val() == "") {
+            $("#email").css("borderColor", "red");
             isValidateSuccessful = false;
-            document.getElementById("emailHint").style.display = "block";
         } else {
-            fields[1].style.borderColor = "green";
-            document.getElementById("emailHint").style.display = "none";
+            $("#email").css("borderColor", "green");
         }
     }
 
-    if (fields[2] != null) {
-        if (!(fields[2].value.startsWith("+7") || fields[2].value.startsWith("+3")) ||
-            fields[2].value.includes(' ') || !(fields[2].value.length >= 9 && fields[2].value.length <= 12) || !/^\d+$/.test(phone.value.slice(1))) {
-            fields[2].style.borderColor = "red";
+    if ($("#phone") != null) {
+        if (!($("#phone").val().startsWith("+7") || $("#phone").val().startsWith("+3")) ||
+            $("#phone").val().includes(' ') || !($("#phone").val().length >= 9 && $("#phone").val().length <= 12) || !/^\d+$/.test($("#phone").val().slice(1))) {
+            $("#phone").css("borderColor", "red");
             isValidateSuccessful = false;
-            document.getElementById("phoneHint").style.display = "block";
         } else {
-            fields[2].style.borderColor = "green";
-            document.getElementById("phoneHint").style.display = "none";
+            $("#phone").css("borderColor", "green");
         }
     }
 
-    if (!fields[3].checked && !fields[4].checked) {
-        isValidateSuccessful = false;
-    }
-
-    if (fields[5] != null) {
-        if (fields[5].value == "") {
-            fields[5].style.borderColor = "red";
+    if ($("#date") != null) {
+        if ($("#date").val() == "") {
+            $("#date").css("borderColor", "red");
             isValidateSuccessful = false;
-            document.getElementById("dateHint").style.display = "block";
         } else {
-            fields[5].style.borderColor = "green";
-            document.getElementById("dateHint").style.display = "none";
+            $("#date").css("borderColor", "green");
         }
     }
 
     console.log(isValidateSuccessful);
 
-    let button = document.getElementById("sendButton");
-    button.disabled = !isValidateSuccessful;
+    if (isValidateSuccessful) {
+        $("#sendButton").prop("disabled", false);
+    } else {
+        $("#sendButton").prop("disabled", true);
+    }
 
     return isValidateSuccessful;
+}
+
+function showPopOver(element, text) {
+    element
+        .mouseover(() => {
+            $("<div></div>")
+                .addClass("popover")
+                .append(
+                    $("<h3></h3>")
+                        .text(text)
+                )
+                .insertAfter(element)
+                .fadeIn(300);
+        })
+        .mouseout(() => {
+            element.next("div")
+                .fadeOut(300, () => {
+                    element.nextAll(".popover").remove();
+                });
+        });
+}
+
+function showModalWindow(text, callback) {
+    $("<div></div>")
+        .addClass("modal")
+        .append(
+            $("<h3></h3>")
+                .text(text)
+        )
+        .append(
+            $("<input></input>")
+                .attr("type", "button")
+                .val("Да")
+                .click(() => {
+                    $(".modal").prevAll().css("filter", "blur(0px)")
+                    $(".modal").remove();
+                    callback();
+                })
+        )
+        .append(
+            $("<input></input>")
+                .attr("type", "button")
+                .val("Нет")
+                .click(() => {
+                    $(".modal").prevAll().css("filter", "blur(0px)")
+                    $(".modal").remove();
+                })
+        )
+        .appendTo($("body"))
+        .fadeIn(300)
+        .prevAll()
+        .css("filter", "blur(5px)");
 }

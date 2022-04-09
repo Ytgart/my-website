@@ -5,6 +5,7 @@
     <title>Фотоальбом</title>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="scripts/LocalStorage.js"></script>
     <script src="scripts/Menu.js"></script>
     <script src="scripts/DateAndTime.js"></script>
@@ -36,8 +37,13 @@
         <script src="scripts/Fotoalbum.js"></script>
     </div>
 
-    <div class="fullPhoto", id="fullPhotoDiv">
-        <img src="images/1.jpg", id="fullPhotoImg">
+    <div class="fullPhoto" , id="fullPhotoDiv">
+        <img src="images/1.jpg" , id="fullPhotoImg">
+        <div class="fullPhotoControlls">
+            <img id="arrowleft" src="images/arrow_left.png">
+            <h1 id="photosCount">Фото 1 из 8</h1>
+            <img id="arrowright" src="images/arrow.png">
+        </div>
     </div>
 </body>
 

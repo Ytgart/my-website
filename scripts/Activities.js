@@ -1,13 +1,17 @@
-let hrefs = ["music", "hobby", "books", "films"];
+$(() => {
+    let hrefs = ["music", "hobby", "books", "films"];
 
-let ul = document.getElementById("content").appendChild(document.createElement("ul"));
+    drawList(hrefs, "Любимая музыка", "Мое хобби", "Любимые книги", "Любимые фильмы");
+});
 
 function drawList(hrefs, ...titles){
+    $("#content").append("<ul></ul>");
+    let ul = $("#content").children()
+
     for (let i = 0; i < titles.length; i++) {
-        let newLi = document.createElement("li");
-        newLi.appendChild(document.createElement("h3")).innerHTML = `<a href="#${hrefs[i]}">${titles[i]}</a>`;
-        ul.appendChild(newLi);
+        let newLi = $("<li></li>");
+        newLi.append($(`<h3><a href="#${hrefs[i]}">${titles[i]}</a></h3>`));
+
+        ul.append(newLi);
     }
 }
-
-window.onload = drawList(hrefs, "Любимая музыка", "Мое хобби", "Любимые книги", "Любимые фильмы");

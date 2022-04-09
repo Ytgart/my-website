@@ -1,25 +1,24 @@
-window.addEventListener("load", main, true);
+$(() => {
+    setupMenu();
+});
 
-function main() {
-    let dropDownMenu = document.getElementById("myDropdownContent");
-    let dropDownLi = document.getElementById("myDropDown");
-    let navigationLinks = document.querySelectorAll('nav a');
+function setupMenu() {
+    let dropDownMenu = $("#myDropdownContent");
+    let dropDownLi = $("#myDropDown");
 
-    navigationLinks.forEach(element => {
-        element.addEventListener('mouseover', () => {
-            element.style.background = "#777777"
+    $("nav a")
+        .mouseover((event) => {
+            $(event.target).css("background", "#777777");
         })
+        .mouseout((event) => {
+            $(event.target).css("background", "#3b3b3b");
+        });
 
-        element.addEventListener('mouseout', () => {
-            element.style.background = "#3b3b3b"
+    dropDownLi
+        .mouseover(() => {
+            dropDownMenu.css("display", "flow-root");
         })
-    })
-
-    dropDownLi.addEventListener('mouseover', () => {
-        dropDownMenu.style.display = "flow-root"
-    })
-
-    dropDownLi.addEventListener('mouseout', () => {
-        dropDownMenu.style.display = "none"
-    })
+        .mouseout(() => {
+            dropDownMenu.css("display", "none");
+        });
 }

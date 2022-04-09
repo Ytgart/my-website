@@ -1,24 +1,19 @@
-let dateTimeText = null
-
-window.addEventListener("load", main, true);
-setInterval(drawDateAndTime, 1);
-
-function main() {
-    dateTimeText = document.getElementById("dateTime");
-}
+$(() => {
+    setInterval(drawDateAndTime, 1);
+});
 
 function drawDateAndTime() {
     let date = new Date();
 
-    dateTimeText.innerHTML = formatDate(date) + " | " + date.toLocaleTimeString();
+    $("#dateTime").text(formatDate(date) + " | " + date.toLocaleTimeString());
 }
 
 function formatDate(date) {
 
-    var dd = date.getDate();
+    let dd = date.getDate();
     if (dd < 10) dd = '0' + dd;
 
-    var mm = date.getMonth();
+    let mm = date.getMonth();
     switch (date.getMonth()) {
         case 0: mm = "Январь"; break;
         case 1: mm = "Февраль"; break;
@@ -34,7 +29,7 @@ function formatDate(date) {
         case 11: mm = "Декабрь"; break;
     }
 
-    var yy = date.getFullYear() % 100;
+    let yy = date.getFullYear() % 100;
     if (yy < 10) yy = '0' + yy;
 
     return dd + ' ' + mm + ' ' + yy;

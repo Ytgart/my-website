@@ -1,5 +1,3 @@
-window.addEventListener("load", main);
-
 let months = [
     'Январь',
     'Февраль',
@@ -14,47 +12,46 @@ let months = [
     'Декабрь',
 ];
 
-function main() {
-    let selectMonths = document.getElementById("months");
-    let selectYears = document.getElementById("years");
-    let selectDays = document.getElementsByClassName("days");
+$(() => {
+    main();
+});
 
-    let dateField = document.getElementById("date");
-    let calendar = document.getElementsByClassName("calendar");
+function main() {
+    let selectMonths = $("#months");
+    let selectYears = $("#years");
+    let selectDays = $(".days");
+
+    let dateField = $("#date");
+    let calendar = $(".calendar");
 
     months.forEach(element => {
-        let newOption = document.createElement("option");
-        selectMonths.appendChild(newOption).innerHTML = element;
+        selectMonths.append(`<option>${element}</option>`);
     });
 
-    dateField.addEventListener("click", () => {
-        calendar[0].style.display = "block"
+    dateField.click(() => {
+        calendar.css("display", "block");
     });
 
     for (let i = 1995; i < 2025; i++) {
-        let newOption = document.createElement("option");
-        selectYears.appendChild(newOption).innerHTML = i;
+        selectYears.append(`<option>${i}</option>`);
     }
 
     for (let i = 1; i < 32; i++) {
-        let newDay = document.createElement("a");
-        let day = selectDays[0].appendChild(newDay);
-        day.innerHTML = i;
-        day.addEventListener("mouseover", () => {
-            day.style.background = "#181818";
-        });
-        day.addEventListener("mouseout", () => {
-            day.style.background = "#3b3b3b";
-        });
-
-        day.addEventListener("click", () => {
-            calendar[0].style.display = "none";
-            setDate(i, selectMonths.value, selectYears.value);
-        });
+        $(`<a>${i}</a>`)
+            .appendTo(selectDays)
+            .mouseover((event) => {
+                $(event.target).css("background", "#181818");
+            })
+            .mouseout((event) => {
+                $(event.target).css("background", "#3b3b3b");
+            })
+            .click(() => {
+                calendar.css("display", "none");
+                setDate(i, selectMonths.val(), selectYears.val());
+            });
     }
 }
 
 function setDate(day, month, year) {
-    let dateIP = document.getElementById("date");
-    dateIP.value = day + " " + month + " " + year;
+    $("#date").val(day + " " + month + " " + year);
 }

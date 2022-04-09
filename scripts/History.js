@@ -1,57 +1,51 @@
-window.onload = () => {
-    createHistoryTable()
-    createHistoryTable2()
-};
+$(() => {
+    createHistoryTable();
+    createHistoryTable2();
+});
 
 const pages = ["Главная", "Обо мне", "Мои интересы", "Учеба", "Фотоальбом", "Контакт", "Тест"];
 const pageUrls = ["main.html", "aboutme.html", "activities.html", "study.html", "photo.html", "contact.html", "test.html"];
 
 function createHistoryTable() {
-    let table = document.createElement("table");
-    let title = document.createElement("h1");
-    title.innerHTML = "История текущего сеанса";
+    let table = $("<table></table>");
+    let title = $("<h1>История текущего сеанса</h1>");
 
-    pages.forEach(function(value, index) {
-        let tr = document.createElement("tr");
+    pages.forEach(function (value, index) {
+        let tr = $("<tr></tr>");
+        let td1 = $(`<td>${value}</td>`);
 
-        let td1 = document.createElement("td");
-        td1.innerHTML = value;
+        let td2 = $(`<td>${sessionStorage.getItem(pageUrls[index]) ?? 0}</td>`);
 
-        let td2 = document.createElement("td");
-        td2.innerHTML = sessionStorage.getItem(pageUrls[index]);
+        tr.append(td1);
+        tr.append(td2);
 
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-
-        table.appendChild(tr);
+        table.append(tr);
     });
 
-    document.getElementById("historyTable").appendChild(title);
-    document.getElementById("historyTable").appendChild(table);
+    $("#historyTable")
+        .append(title)
+        .append(table);
 }
 
 function createHistoryTable2() {
-    let table = document.createElement("table");
-    let title = document.createElement("h1");
-    title.innerHTML = "История за все время";
+    let table = $("<table></table>");
+    let title = $("<h1>История за все время</h1>");
 
-    pages.forEach(function(value, index) {
-        let tr = document.createElement("tr");
+    pages.forEach(function (value, index) {
+        let tr = $("<tr></tr>");
+        let td1 = $(`<td>${value}</td>`);
 
-        let td1 = document.createElement("td");
-        td1.innerHTML = value;
+        let td2 = $(`<td>${getCookie(pageUrls[index])}</td>`);
 
-        let td2 = document.createElement("td");
-        td2.innerHTML = getCookie(pageUrls[index]);
+        tr.append(td1);
+        tr.append(td2);
 
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-
-        table.appendChild(tr);
+        table.append(tr);
     });
 
-    document.getElementById("historyTable").appendChild(title);
-    document.getElementById("historyTable").appendChild(table);
+    $("#historyTable")
+        .append(title)
+        .append(table);
 }
 
 function getCookie(cname) {

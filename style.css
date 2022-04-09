@@ -19,91 +19,78 @@
     font-weight: normal;
 }
 
-body
-{
+body {
     background-color: #121212;
     padding-top: 130px;
 }
 
-h1
-{
+h1 {
     font-family: "Bebas";
     font-size: 30px;
     color: #d3d3d3;
     text-shadow: 0 0 10px #000000;
 }
 
-h2
-{
+h2 {
     font-family: "Bebas";
     font-size: 30px;
     color: #ffffff;
 }
 
-p
-{
+p {
     font-family: "Sans";
     font-size: 24px;
     color: white;
 }
 
-img
-{
+img {
     border-radius: 20px;
 }
 
 /*content class*/
-.content ul
-{
+.content ul {
     list-style-type: none;
     text-align: center;
 }
 
-.content a
-{
+.content a {
     text-decoration: none;
     color: #ffffff;
 }
 
-.content a:hover
-{
-    color:rgb(182, 182, 182);
+.content a:hover {
+    color: rgb(182, 182, 182);
 }
 
-.content h3
-{
+.content h3 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
 }
 
 /*disc class*/
-.disc table
-{
+.disc table {
     background-color: white;
     border-collapse: collapse;
     margin-left: 30px;
 }
 
-.disc th,td
-{
+.disc th,
+td {
     border: 1px solid grey;
     padding: 3px;
 }
 
 /*photoalbum class*/
-.photoalbum table
-{
+.photoalbum table {
     border-collapse: collapse;
 }
 
-.photoalbum td
-{
+.photoalbum td {
     border: 0px;
     padding-right: 15px;
 }
 
-.photoalbum h3
-{
+.photoalbum h3 {
     text-align: center;
     font-family: "Bebas";
     font-size: 30px;
@@ -111,20 +98,17 @@ img
     color: white;
 }
 
-.photoalbum img:hover
-{
+.photoalbum img:hover {
     filter: brightness(0.7);
 }
 
-.photoalbum img
-{
-    width: 360px; 
+.photoalbum img {
+    width: 360px;
     height: 210px;
 }
 
 /*nav class*/
-nav 
-{
+nav {
     background: #181818;
     position: fixed;
     top: 0;
@@ -136,8 +120,7 @@ nav
     padding-left: 30px;
 }
 
-nav a
-{
+nav a {
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -150,56 +133,47 @@ nav a
     margin-left: 30px;
 }
 
-nav p
-{
+nav p {
     margin-left: 20px;
 }
 
-.dropDownContent
-{
+.dropDownContent {
     position: absolute;
     width: max-content;
     display: none;
 }
 
-.dropDownContent a
-{
+.dropDownContent a {
     margin-top: 10px;
 }
 
 /*cv class*/
-.cv
-{
+.cv {
     background-color: #181818;
     border-radius: 30px;
     width: 100%;
     margin-top: 30px;
 }
 
-.cv img
-{
+.cv img {
     margin-left: 3px;
     margin-top: 3px;
 }
 
-.cv h2
-{
+.cv h2 {
     margin: 0;
 }
 
-.cv p
-{
-    margin: 0;  
+.cv p {
+    margin: 0;
 }
 
-.cv td
-{
+.cv td {
     border: 0px;
 }
 
 /*textbox class*/
-.textbox 
-{
+.textbox {
     background-color: #181818;
     width: fit-content;
     height: fit-content;
@@ -210,35 +184,30 @@ nav p
     margin-bottom: 15px;
 }
 
-.textbox h2
-{
+.textbox h2 {
     text-align: center;
 }
 
-.textbox p
-{
+.textbox p {
     width: 800px;
     text-align: center;
 }
 
-.textbox img
-{
+.textbox img {
     width: 800px;
     height: 450px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.textbox table
-{
+.textbox table {
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
 /*inputform class*/
-.inputform
-{
+.inputform {
     background-color: #181818;
     border-radius: 30px;
     width: 350px;
@@ -247,21 +216,18 @@ nav p
     margin-right: auto;
 }
 
-.inputform label
-{
+.inputform label {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.inputform form
-{
+.inputform form {
     padding: 40px;
     text-align: center;
 }
 
 /*testform class*/
-.testform
-{
+.testform {
     background-color: #181818;
     border-radius: 30px;
     width: 350px;
@@ -272,26 +238,22 @@ nav p
     margin-right: auto;
 }
 
-.testform label
-{
+.testform label {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.testform form
-{
+.testform form {
     padding: 40px;
 }
 
-.testform p
-{
+.testform p {
     font-size: 20px;
     margin-left: 0px;
     margin-top: 10px;
 }
 
-.calendar 
-{
+.calendar {
     display: none;
     position: absolute;
     height: max-content;
@@ -301,28 +263,24 @@ nav p
     border-radius: 20px;
 }
 
-.dayNames
-{
+.dayNames {
     display: flex;
     gap: 7px;
 }
 
-.dayNames p
-{
+.dayNames p {
     color: #000000;
     font-size: 15px;
 }
 
-.selectMY
-{
+.selectMY {
     width: 208px;
     background: #3b3b3b;
     padding: 5px;
     border-radius: 10px;
 }
 
-.days
-{
+.days {
     width: 220px;
     display: flex;
     flex-flow: row wrap;
@@ -330,8 +288,7 @@ nav p
     align-content: center;
 }
 
-.days a
-{
+.days a {
     text-decoration: none;
     width: 25px;
     height: 25px;
@@ -341,8 +298,7 @@ nav p
     user-select: none;
 }
 
-input 
-{
+input {
     border-width: 4px;
     border-radius: 5px;
 }
@@ -356,6 +312,54 @@ input
 }
 
 .fullPhoto img {
-    width: 1000px;
-    height: 600px;
+    width: 950px;
+    height: 550px;
+}
+
+.fullPhotoControlls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.fullPhotoControlls img {
+    width: 64px;
+    height: 84px;
+}
+
+.popover {
+    position: absolute;
+    transform: translate(320px, -75%);
+    background: #181818;
+    border-radius: 10px;
+    display: none;
+    width: 300px;
+}
+
+.popover h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #181818;
+    border-radius: 10px;
+    display: none;
+    width: 300px;
+    text-align: center;
+}
+
+.modal h3 {
+    color: white;
+}
+
+.modal input {
+    width: 64px;
+    height: 32px;
 }

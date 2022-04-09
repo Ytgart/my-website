@@ -1,0 +1,152 @@
+$backgroundGrey: #121212;
+$mainGrey: #181818;
+$additionalGrey: #3b3b3b;
+
+$formWidth: 350px;
+$formHeight: 560px;
+
+@font-face {
+    font-family: "Bebas";
+    src: url("/fonts/Bebas.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@mixin default-text($text-size) {
+    font-family: "Bebas";
+    font-size: $text-size;
+    color: white;
+}
+
+@mixin block-style($color) {
+    background-color: $color;
+    border-radius: 30px;
+}
+
+body {
+    background-color: $backgroundGrey;
+    padding-top: 10%;
+}
+
+nav {
+    background: $mainGrey;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 30px;
+
+    a {
+        @include default-text(25px);
+        @include block-style($additionalGrey);
+        text-decoration: none;
+        color: #ffffff;
+        text-align: center;
+        text-shadow: 0 0 10px #000000;
+        display: block;
+        padding: 12px;
+        margin-left: 30px;
+    }
+
+    p {
+        @include default-text(25px);
+        margin-left: 20px;
+    }
+}
+
+.dropDownContent {
+    position: absolute;
+    height: max-content;
+    width: max-content;
+    display: none;
+
+    a {
+        margin-top: 10px;
+    }
+}
+
+h1 {
+    @include default-text(30px);
+    text-shadow: 0 0 10px #000000;
+}
+
+.testform {
+    @include block-style($mainGrey);
+    width: $formWidth;
+    height: $formHeight;
+    margin-left: auto;
+    margin-right: auto;
+
+    label {
+        @include default-text(18px);
+    }
+
+    form {
+        padding: 40px;
+        text-align: center;
+    }
+
+    p {
+        @include default-text(20px)
+    }
+}
+
+.calendar {
+    @extend .dropDownContent;
+    @include block-style(whitesmoke);
+    padding: 20px;
+}
+
+.dayNames {
+    display: flex;
+    gap: 7px;
+
+    p {
+        color: #000000;
+        font-size: 15px;
+    }
+}
+
+.selectMY {
+    @include block-style($additionalGrey);
+    width: 208px;
+    padding: 5px;
+}
+
+.days {
+    width: 220px;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 7px;
+    align-content: center;
+
+    a {
+        @include default-text(19px);
+        text-decoration: none;
+        width: 25px;
+        height: 25px;
+        background: $additionalGrey;
+        user-select: none;
+    }
+}
+
+input {
+    border-width: 4px;
+    border-radius: 5px;
+}
+
+.popover {
+    @extend .dropDownContent;
+    transform: translate($formWidth - 30px, -75%);
+    background: $mainGrey;
+    border-radius: 10px;
+    width: 300px;
+
+    h3 {
+        @include default-text(20px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

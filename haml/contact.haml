@@ -1,0 +1,56 @@
+%head
+    %link(rel="stylesheet" href="/style.css")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
+    %script(src="/scripts/Validator.js")
+    %script(src="/scripts/Menu.js")
+    %script(src="/scripts/DateAndTime.js")
+    %script(src="/scripts/LocalStorage.js")
+    %script(src="/scripts/Calendar.js")
+
+%body
+    = Haml::Engine.new(File.read('navbar.haml')).render
+    .inputform
+        %form#form1(action="mailto:solovey-vanyaaa@yandex.ru" method="POST")
+            %input#fio(name="fio" placeholder="ФИО" size="40")
+                %br
+                    %br
+                        %input#email(name="e-mail" placeholder="E-Mail" size="40")
+                            %br
+                                %br
+                                    %input#phone(name="phone" placeholder="Телефон" size="40")
+                                        %br
+                                            %br
+                                                %input#date(name="date" placeholder="Дата" size="40")
+                                                    %br
+                                                        %br
+                                                            .calendar
+                                                                .selectMY
+                                                                    %select#months
+                                                                    %select#years
+                                                                .dayNames
+                                                                    %p &#x41F;&#x43E;&#x43D;
+                                                                    %p &#x412;&#x442;&#x440;
+                                                                    %p &#x421;&#x440;&#x434;
+                                                                    %p &#x427;&#x442;&#x432;
+                                                                    %p &#x41F;&#x44F;&#x442;
+                                                                    %p &#x421;&#x443;&#x431;
+                                                                    %p &#x412;&#x43E;&#x441;
+                                                                .days
+                                                            %input#1(name="gender" type="radio" value="male")
+                                                                %label(for="genderMale") &#x41C;&#x443;&#x436;&#x441;&#x43A;&#x43E;&#x439;
+                                                                %input#2(name="gender" type="radio" value="female")
+                                                                    %label(for="genderMale") &#x416;&#x435;&#x43D;&#x441;&#x43A;&#x438;&#x439;
+                                                                    %br
+                                                                        %br
+                                                                            %select(name="age")
+                                                                                %option 1-18
+                                                                                %option 18-35
+                                                                                %option 35-50
+                                                                                %option 50-70
+                                                                                %option 70-..
+                                                                            %br
+                                                                                %br
+                                                                                    %input(type="reset" value="Очистить поля")
+                                                                                        %br
+                                                                                            %br
+                                                                                                %input#sendButton(type="button" value="Отправить")

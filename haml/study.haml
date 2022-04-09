@@ -1,0 +1,198 @@
+%head
+    %link(rel="stylesheet" href="/style.css")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
+    %script(src="/scripts/Menu.js")
+    %script(src="/scripts/DateAndTime.js")
+    %script(src="/scripts/LocalStorage.js")
+
+%body
+    = Haml::Engine.new(File.read('navbar.haml')).render
+    .textbox
+        %h2 Название университета
+        %p Севастопольский государственный университет
+    .textbox
+        %h2 Название кафедры
+        %p Информационные системы и управление в технических системах
+    .textbox
+        %h2 Перечень изучаемых дисциплин
+        .disc
+            %table
+                %tr
+                    %td(rowspan="3") №
+                    %th(rowspan="3") Дисциплина
+                    %th(colspan="12") Часов в неделю (Лекций, Лаб.раб, Практ. раб)
+                %tr
+                    %th(colspan="6") 1 курс
+                    %th(colspan="6") 2 курс
+                %tr
+                    %td(colspan="3") 1 сем
+                    %td(colspan="3") 2 сем
+                    %td(colspan="3") 3 сем
+                    %td(colspan="3") 4 сем
+                %tr
+                    %td 1
+                    %td Экология
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th 1
+                    %th 0
+                    %th 1
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 2
+                    %td Высшая математика
+                    %th 3
+                    %th 0
+                    %th 3
+                    %th 3
+                    %th 0
+                    %th 3
+                    %th 2
+                    %th 0
+                    %th 2
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 3
+                    %td Русский язык и культура речи
+                    %th 1
+                    %th 0
+                    %th 2
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 4
+                    %td Основы дискретной математики
+                    %th 2
+                    %th 0
+                    %th 1
+                    %th 3
+                    %th 0
+                    %th 2
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 5
+                    %td Основы программированя и алгоритмические языки
+                    %th 3
+                    %th 2
+                    %th 0
+                    %th 3
+                    %th 3
+                    %th 0
+                    %th 0
+                    %th 0
+                    %th 1
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 6
+                    %td Основы экологии
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th 1
+                    %th 0
+                    %th 0
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 7
+                    %td
+                        Теория вероятностей и математическая
+                        статистика
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th 3
+                    %th 1
+                    %th 0
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 8
+                    %td Физика
+                    %th 2
+                    %th 2
+                    %th 0
+                    %th 2
+                    %th 2
+                    %th 0
+                    %th 2
+                    %th 1
+                    %th 0
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 9
+                    %td Основы электротехники и электроники
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th 2
+                    %th 1
+                    %th 1
+                    %th
+                    %th
+                    %th
+                %tr
+                    %td 10
+                    %td Численные методы в информатике
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th 2
+                    %th 2
+                    %th 0
+                    %th 0
+                    %th 0
+                    %th 1
+                %tr
+                    %td 11
+                    %td Методы исследования операций
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th
+                    %th 1
+                    %th 1
+                    %th 0
+                    %th 2
+                    %th 1
+                    %th 1

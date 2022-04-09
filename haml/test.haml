@@ -1,0 +1,47 @@
+%head
+    %link(rel="stylesheet" href="/style.css")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
+    %script(src="/scripts/Menu.js")
+    %script(src="/scripts/DateAndTime.js")
+    %script(src="/scripts/LocalStorage.js")
+    %script(src="/scripts/Validator.js")
+
+%body
+    = Haml::Engine.new(File.read('navbar.haml')).render
+    .testform
+        %form#form1(action="mailto:solovey-vanyaaa@yandex.ru" method="POST")
+            %input#fio(name="name" placeholder="ФИО" size="40")/
+            %br/
+            %br/
+            %select(name="group")
+                %optgroup(label="1 курс")
+                    %option ИС/б-21-1-о
+                %optgroup(label="2 курс")
+                    %option ИС/б-20-1-о
+                %optgroup(label="3 курс")
+                    %option ИС/б-19-1-о
+                %optgroup(label="4 курс")
+                    %option ИС/б-18-1-о
+            %br/
+            %br/
+            %p Дайте определение биоценоза.
+            %select(name="1question")
+                %option Сообщество видов.
+                %option Сообщество растений и животных.
+            %br/
+            %br/
+            %p Что такое биотические факторы?
+            %input#question2(name="2question" type="text")/
+            %br/
+            %br/
+            %p Что подразумевают симбиотические отношения?
+            %input#1(name="3question" type="radio" value="answer1")/
+            %label Взаимную выгоду.
+            %input#2(name="3question" type="radio" value="answer2")/
+            %label Угнетение.
+            %br/
+            %br/
+            %input(type="reset" value="Очистить поля")/
+            %br/
+            %br/
+            %input(type="submit" value="Отправить")/

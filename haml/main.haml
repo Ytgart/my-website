@@ -1,0 +1,28 @@
+%head
+    %link(rel="stylesheet" href="/style.css")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
+    %script(src="/scripts/Menu.js")
+    %script(src="/scripts/DateAndTime.js")
+    %script(src="/scripts/LocalStorage.js")
+
+%body
+    = Haml::Engine.new(File.read('navbar.haml')).render
+    .cv
+        %table
+            %tr
+                %td(rowspan="3")
+                    %img(alt="Фото" height="256" src="/images/photo profilya.png" width="256")/
+                %td
+                    %h2 ФИО
+                    %p Павлов Иван Андреевич
+            %tr
+                %td
+                    %h2 Группа
+                    %p ИС/б-19-1-о
+            %tr
+                %td
+                    %h2 Лабораторная работа
+                    %p
+                        %strong №1
+                        \- Исследование возможностей языка разметки гипертекстов
+                        HTML и каскадных таблиц стилей CSS

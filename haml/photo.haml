@@ -1,0 +1,16 @@
+- @fotosPaths = {'Водопад' => '1', 'Водопад 2' => '2', 'Замок' => '3', 
+'Зелень' => '4', 'Лампа' => '5', 'Лампа 2' => '6', 'Зеленый фон' => '7', 'Вид' => '8', 
+'Закат' => '9', 'Закат 2' => '10', 'Дерево' => '11', 'Остановка' => '12', 'Наушники' => '13', 'Гитара' => '14', 'Гитара 2' => '15'};
+
+%head
+    %link(rel="stylesheet" href="/style.css")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
+    %script(src="/scripts/Menu.js")
+    %script(src="/scripts/DateAndTime.js")
+    %script(src="/scripts/LocalStorage.js")
+
+%body
+    = Haml::Engine.new(File.read('navbar.haml')).render
+    #photoalbum.photoalbum
+        -@fotosPaths.each do |key, value|
+            %img(src = "/images/#{value}.jpg" title = "#{key}")

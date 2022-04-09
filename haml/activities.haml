@@ -1,0 +1,50 @@
+%head
+    %link(rel="stylesheet" href="/style.css")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
+    %script(src="/scripts/Menu.js")
+    %script(src="/scripts/DateAndTime.js")
+    %script(src="/scripts/LocalStorage.js")
+    %script(src="/scripts/Activities.js")
+
+%body
+    = Haml::Engine.new(File.read('navbar.haml')).render
+    #content.content
+    #music.textbox
+        %img(alt="рхчп" src="/images/9.jpg")/
+        %h2 Любимая мызыка
+        %p
+            Red Hot Chili Peppers (часто используется аббревиатура RHCP; с англ. — «Красные острые перцы чили») —
+            американская
+            рок-группа, образованная в 1983 году в Калифорнии вокалистом Энтони Кидисом, басистом Майклом Бэлзари
+            (больше известным
+            как Фли), гитаристом Хиллелом Словаком и барабанщиком Джеком Айронсом.
+        %img(alt="foo-fighters" src="/images/foo-fighters.jpg")/
+        %p Foo Fighters — американская рок-группа, образованная бывшим участником Nirvana Дейвом Гролом в 1994 году.
+    #hobby.textbox
+        %img(alt="kotlin" src="/images/kotlin.jpeg")/
+        %h2 Мое хобби
+        %p Программирую на острове.
+    #books.textbox
+        %img(alt="евгений онегин" src="/images/evgen.jpeg")/
+        %h2 Любимые книги
+        %p
+            «Евге́ний Оне́гин» — роман в стихах русского писателя и поэта Александра Сергеевича Пушкина, написанный в
+            1823—1830
+            годах, одно из самых значительных произведений русской словесности.
+        %img(alt="преступление" src="/images/fyodor-dostoevskiy-prestuplenie-i-nakazanie-16086.jpg")/
+        %p
+            «Преступление и наказание» — социально-психологический и социально-философский роман Фёдора Михайловича
+            Достоевского,
+            над которым писатель работал в 1865—1866 годах.
+    #films.textbox
+        %img(alt="звездные войны" src="/images/starwars.jpg")/
+        %h2 Любимые фильмы
+        %p
+            «Звёздные войны» — медиафраншиза в жанре космическая опера, включающая в себя 11
+            художественных фильмов (9 эпизодов основной саги, также известна как «Сага Скайуокеров» и 2 фильма
+            «историй»)
+        %img(alt="богемская рапсодия" src="/images/bohemian_rhapsody.jpg")/
+        %p
+            «Богемская рапсодия» (англ. Bohemian Rhapsody) — американо-британский биографический фильм о британской
+            рок-группе
+            Queen, сосредоточенный на жизни вокалиста Фредди Меркьюри вплоть до концерта группы на фестивале Live Aid.

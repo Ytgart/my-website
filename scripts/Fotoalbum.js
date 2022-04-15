@@ -1,85 +1,143 @@
-const fotosPaths = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const PhotoAlbum = {
+    data() {
+        return {
+            index: -1,
+            photos: [
+                {
+                    title: "Водопад",
+                    photo: "/images/1.jpg",
+                    alt: "Водопад",
+                },
+                {
+                    title: "Водопад 2",
+                    photo: "/images/2.jpg",
+                    alt: "Водопад 2",
+                },
+                {
+                    title: "Замок",
+                    photo: "/images/3.jpg",
+                    alt: "Замок",
+                },
+                {
+                    title: "Зелень",
+                    photo: "/images/4.jpg",
+                    alt: "Зелень",
+                },
+                {
+                    title: "Лампа",
+                    photo: "/images/5.jpg",
+                    alt: "Лампа",
+                },
+                {
+                    title: "Лампа 2",
+                    photo: "/images/6.jpg",
+                    alt: "Лампа 2",
+                },
+                {
+                    title: "Зеленый фон",
+                    photo: "/images/7.jpg",
+                    alt: "Лампа 2",
+                },
+                {
+                    title: "Пещера",
+                    photo: "/images/8.jpg",
+                    alt: "Пещера",
+                },
+                {
+                    title: "Закат",
+                    photo: "/images/9.jpg",
+                    alt: "Закат",
+                },
+                {
+                    title: "Дерево",
+                    photo: "/images/10.jpg",
+                    alt: "Дерево",
+                },
+                {
+                    title: "Закат 2",
+                    photo: "/images/11.jpg",
+                    alt: "Закат 2",
+                },
+                {
+                    title: "Остановка",
+                    photo: "/images/12.jpg",
+                    alt: "Остановка",
+                },
+                {
+                    title: "Наушники",
+                    photo: "/images/13.jpg",
+                    alt: "Наушники",
+                },
+                {
+                    title: "Гитара",
+                    photo: "/images/14.jpg",
+                    alt: "Гитара",
+                },
+                {
+                    title: "Гитара 2",
+                    photo: "/images/15.jpg",
+                    alt: "Гитара 2",
+                }
+            ],
+        };
+    },
+};
 
-const titles = ['Водопад', 'Водопад 2', 'Замок', 'Зелень', 'Лампа', 'Лампа 2', 'Зеленый фон', 'Вид',
-    'Закат', 'Закат 2', 'Дерево', 'Остановка', 'Наушники', 'Гитара', 'Гитара 2'];
+const app = Vue.createApp(PhotoAlbum);
 
-$(() => {
-    main();
+app.component("album-item", {
+  props: ["package"],
+  emits: ["click"],
+  template: `
+        <span class="album-item" @click="$emit('click')">
+            <img :src="package.photo" :alt="package.alt" :title="package.title">
+        </span>
+    `,
+  data() {
+    return {
+      isOpened: false
+    };
+  }
 });
 
-function main() {
-    $("#fullPhotoImg")
-        .click(() => {
-            $("#fullPhotoDiv").fadeOut(300);
-        });
+app.component("img-popup", {
+  props: ["photos", "index"],
+  emits: ["close"],
+  template: `
+        <teleport to="body">
+        <div class="img_popup">
+            <img :src="photos[id].photo" :alt="photos.alt" @click="$emit('close')">
+            <h2>{{photos[id].title}}</h2>
+            <p>{{photos[id].comment}}</p>
 
-    $("#photoalbum").append("<table></table>");
-
-    let currentElement = 0;
-
-    for (let i = 0; i < Math.ceil(titles.length / 4); i++) {
-        let tr = $("<tr></tr>").appendTo($("table"));
-
-        for (let j = 0; j < 4; j++) {
-            let image = $("<img></img>")
-                .attr("src", `images/${fotosPaths[currentElement]}.jpg`)
-                .attr("title", titles[currentElement])
-                .click(() => {
-                    openFullPhoto(image.attr("src"), image.attr("title"));
-                });
-
-            let name = $(`<h3>${titles[currentElement]}</h3>`)
-
-            $("<td></td>")
-                .append(image)
-                .append(name)
-                .appendTo(tr);
-
-            currentElement++;
-            if (currentElement >= titles.length) {
-                break;
-            }
-        }
+            <div class="fullPhotoControlls">
+                <button type="button" class="to_left" @click="previous">&#8249;</button>
+                <button type="button" class="to_right" @click="next">&#8250;</button>
+            </div>
+        </div>
+    </teleport>
+    `,
+  data() {
+    return {
+      id: this.$props.index
+    };
+  },
+  methods: {
+    previous: function () {
+      if (!this.id) {
+        this.id = this.$props.photos.length - 1;
+      } else {
+        this.id--;
+      }
+    },
+    next: function () {
+      if (this.id === this.$props.photos.length - 1) {
+        this.id = 0;
+      } else {
+        this.id++;
+      }
     }
+  }
+});
 
-    $("#arrowleft")
-        .click(() => {
-            $("#fullPhotoDiv").fadeOut(300, () => {
-                $("#fullPhotoImg").attr('src', `images/${(titles.indexOf($("#fullPhotoImg").attr("title"))) - 1}.jpg`);
-                $("#fullPhotoImg").attr('title', titles[(titles.indexOf($("#fullPhotoImg").attr("title"))) - 1]);
-                $("#photosCount").text(`Фото ${titles.indexOf($("#fullPhotoImg").attr("title")) + 1} из ${fotosPaths.length}`);
-            });
-            $("#fullPhotoDiv").fadeIn(300);
-        })
-        .mouseover(() => {
-            $("#arrowleft").css("filter","brightness(0.7)");
-        })
-        .mouseout(() => {
-            $("#arrowleft").css("filter","brightness(1)");
-        });
-
-    $("#arrowright")
-        .click(() => {
-            $("#fullPhotoDiv").fadeOut(300, () => {
-                $("#fullPhotoImg").attr('src', `images/${(titles.indexOf($("#fullPhotoImg").attr("title"))) + 1}.jpg`);
-                $("#fullPhotoImg").attr('title', titles[(titles.indexOf($("#fullPhotoImg").attr("title"))) + 1]);
-                $("#photosCount").text(`Фото ${titles.indexOf($("#fullPhotoImg").attr("title")) + 1} из ${fotosPaths.length}`);
-            })
-            $("#fullPhotoDiv").fadeIn(300);
-        })
-        .mouseover(() => {
-            $("#arrowright").css("filter","brightness(0.7)");
-        })
-        .mouseout(() => {
-            $("#arrowright").css("filter","brightness(1)");
-        });
-}
-
-function openFullPhoto(src, title) {
-    $("#fullPhotoDiv").fadeIn(300);
-    $("#fullPhotoImg").attr('src', src);
-    $("#fullPhotoImg").attr('title', title);
-
-    $("#photosCount").text(`Фото ${titles.indexOf(title) + 1} из ${fotosPaths.length}`);
-}
-
+app.mount("#app");

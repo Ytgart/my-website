@@ -11,6 +11,6 @@
 
 %body
     = Haml::Engine.new(File.read('navbar.haml')).render
-    #photoalbum.photoalbum
-        -@fotosPaths.each do |key, value|
-            %img(src = "/images/#{value}.jpg" title = "#{key}")
+    #app
+        .photoalbum
+            .album-item{:key => "i" :package => "photo" @click => "index = i" v-for => "(photo,i) in photos"}

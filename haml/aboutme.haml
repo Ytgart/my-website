@@ -1,14 +1,14 @@
 %head
-    %link(rel="stylesheet" href="/style.css")
+    %link(rel="stylesheet" href="/public/assets/css/style.css")
     %script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js")
-    %script(src="/scripts/Menu.js")
-    %script(src="/scripts/DateAndTime.js")
-    %script(src="/scripts/LocalStorage.js")
+    %script(src="/public/assets/js/Menu.js")
+    %script(src="/public/assets/js/DateAndTime.js")
+    %script(src="/public/assets/js/LocalStorage.js")
 
 %body
     = Haml::Engine.new(File.read('navbar.haml')).render
     .textbox
-        %img{:alt => "test", :src => "/images/16.jpg"}/
+        %img{:alt => "test", :src => "/public/assets/img/16.jpg"}/
         %h2 Автобиография
         %p
             Родился 6 января 2002 года в городе Севастополе.

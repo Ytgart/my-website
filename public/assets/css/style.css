@@ -1,20 +1,13 @@
 @font-face {
-    font-family: "KamenicaC";
-    src: url("fonts/KamenicaC.ttf");
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
     font-family: "Bebas";
-    src: url("fonts/Bebas.ttf");
+    src: url("Bebas.ttf");
     font-style: normal;
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Sans";
-    src: url("fonts/SourceSansPro-Regular.ttf");
+    src: url("SourceSansPro-Regular.ttf");
     font-style: normal;
     font-weight: normal;
 }
